@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>NaHCO3</title>
+        <title>NH4Cl</title>
         <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
         <style>
             body {
@@ -12,11 +12,20 @@
     </head>
     <body>
         <script>
-            (async function () {
+            // let resize = () => {
+                // document.
+            // };
+
+            console.log(document.querySelector("canvas"));
+
+            (async function() {
                 await cheerpjInit();
                 cheerpjCreateDisplay(window.innerWidth, window.innerHeight);
-                await cheerpjRunJar("/app/NH4Cl/NH4Cl.jar");
-            })();
+                console.log(document.querySelector("canvas"));
+                cheerpjRunJar("/app/NH4Cl/NH4Cl.jar");
+            })().then(() => {
+                console.log("CheerpJ loaded!");
+            });
         </script>
   </body>
 </html>
