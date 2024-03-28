@@ -15,7 +15,7 @@ All the simulations require a package called `lab` that provides a framework for
 
 Next, download `FinishedSimulations-master.zip`. Decompress it and open it. Right click on `src`, then click `Paste Item`. Make sure the folder gets pasted *inside* of `src`. If it doesn't, you can click and drag it inside of `src`. Right click on `src` again, then click `New Terminal at Folder`, near the bottom of the options list. This will open a Terminal window. In it, run the following command:
 
-```bash
+```zsh
 javac -target 1.8 -source 1.8 **/*.java
 ```
 
@@ -25,7 +25,7 @@ This compiles all the `.java` files in `src` using Java 8 (which is version numb
 
 We need to wrap a simulation's code and a copy of `lab` into a `jar` archive, in a process called "building". First, in your Terminal window, run the following command:
 
-```bash
+```zsh
 touch manifest.txt
 ```
 
@@ -57,13 +57,13 @@ Main-Class: HI_equilibrium.HIEquilibrium
 
 Next, in your Terminal window, paste the following command:
 
-```bash
+```zsh
 find lab <package name> -type f -name "*.class" | xargs jar cfm <name>.jar manifest.txt
 ```
 
 Replace `<package name>` with the same as from before. You can replace `<name>` with whatever name you'd like; for example, for the HI code, I named it `HISim`. This command takes all of the compiled `.class` files in `lab` and in the simulation and bundles them into a `.jar` archive. To test that the simulation built correctly, you can run:
 
-```bash
+```zsh
 java -jar <name>.jar
 ```
 
@@ -71,7 +71,84 @@ If the simulation launches as expected, then you have successfully built it!
 
 # Hosting on GitHub Pages
 
-Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. Once you've created the repository, click the `Set up in Desktop` button, which should launch GitHub desktop.
+Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. Once you've created the repository, click the `Set up in Desktop` button, which should launch GitHub Desktop.
+
+Once GitHub Desktop launches, click the `Show in Finder` button, which will open the folder that houses your repository. Copy and paste all of the `.jar` files that you built in the previous step into this folder. You don't need any of the other files, only the `.jar` archives.
+
+Open a new Terminal window and run the following commands:
+
+```zsh
+cd ~/Documents/GitHub/<username>.github.io
+touch index.html
+mkdir sims
+cd sims
+```
+
+By default, Terminal windows execute commands at the root of your computer, `~/`. The first command changes that to the folder that GitHub Desktop created to house the repository (`cd` is short for `change directory`). We create a file called `index.html`, then a folder called `sims` (`mkdir` is short for `make directory`), then navigate into that folder. Next, for each simulation you built, run the following command:
+
+```zsh
+touch <sim name>.html
+```
+
+Go back to the Finder window we opened earlier. Open the `sims` folder, and in each `.html` file, paste the following code:
+
+```html
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simulation</title>
+        <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+        <style>
+            body {
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            (async function () {
+                await cheerpjInit();
+                cheerpjCreateDisplay(window.innerWidth, window.innerHeight);
+                window.onresize = () => {
+                    let display = document.getElementById("cheerpjDisplay");
+                    display.style.width = `${window.innerWidth}px`;
+                    display.style.height = `${window.innerHeight}px`;
+                }
+                await cheerpjRunJar("/app/sims/<sim name>.jar");
+            })();
+        </script>
+  </body>
+</html>
+```
+
+This is mostly boilerplate HTML code, with a few differences:
+
+```js
+<script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+```
+
+This loads CheerpJ from their servers so you don't have to install it locally onto your machine.
+
+```js
+(async function () {
+    await cheerpjInit();
+    cheerpjCreateDisplay(window.innerWidth, window.innerHeight);
+    window.onresize = () => {
+        let display = document.getElementById("cheerpjDisplay");
+        display.style.width = window.innerWidth + "px";
+        display.style.height = window.innerHeight + "px";
+    }
+    await cheerpjRunJar("/app/sims/<sim name>.jar");
+})();
+```
+
+1. `await cheerpjInit();` begins initializing CheerpJ and waits for it to be finished before moving on to the next line.
+2. `cheerpjCreateDisplay(window.innerWidth, window.innerHeight);` initializes the CheerpJ display and sets the starting size to the size of the window.
+3. `window.onresize = () => {` is a function that gets automatically called every time the window is resized.
+4. `let display = document.getElementById("cheerpjDisplay");` creates a variable that lets us reference the CheerpJ display we created in Step 2.
+5. `display.style.width = window.innerWidth + "px"; display.style.height = window.innerHeight + "px";` sets the size of the CheerpJ display to be the size of the window.
+6. `await cheerpjRunJar("/app/sims/<sim name>.jar");` loads the `.jar` simulation file. Replace `<sim name>` with the name of the simulation.
 
 ---
 
@@ -80,7 +157,7 @@ Go to GitHub and [create a new public repository](https://github.com/new) named 
 
 Right click on the folder, then select `New Terminal at Folder`, near the bottom of the options list. This will open a Terminal window. In it, run the following two commands:
 
-```bash
+```zsh
 find . -name "*.java" > sources.txt
 javac -target 1.8 -source 1.8 @sources.txt
 ```
