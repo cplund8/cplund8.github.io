@@ -71,7 +71,9 @@ If the simulation launches as expected, then you have successfully built it!
 
 # Hosting on GitHub Pages
 
-Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. 
+Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. Once you've created the repository, click the `Set up in Desktop` button, which should launch GitHub desktop.
+
+---
 
 # OLD
 
