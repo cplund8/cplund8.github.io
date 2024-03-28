@@ -5,9 +5,9 @@ To compile and build these labs, you will need the following:
 1. The [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) (JDK)
     1. You can test if you have Java installed by running `java --version` in Terminal. If you have it installed, it will tell you the version; if not, it will say something along the lines of "Unknown command"
 2. A [GitHub](https://github.com/) account
-3. A [GitHub Pages](https://pages.github.com/) website
-4. [GitHub Desktop](https://desktop.github.com/)
+3. [GitHub Desktop](https://desktop.github.com/)
 
+> **Note**: For this guide, I'll use `<>` to denote a variable that you have to replace with your own value. Do not include them when typing in your own values. For example, if my guide had `<current year>`, replace it with `2024`, not `<2024>`.
 
 # Compiling the source code
 
@@ -38,7 +38,7 @@ Main-Class: <package name>.<main class>
 
 ```
 
-Replacae `<package name>` with the name of the folder that houses the code for the simulation, and `<main class>` with the name of the main `.java` file. If there is only one `.java` file for the simulation code, that is the main file. If there is more than `.java` file, the main file is the file which contains the following text:
+Replace `<package name>` with the name of the folder that houses the code for the simulation, and `<main class>` with the name of the main `.java` file. If there is only one `.java` file for the simulation code, that is the main file. If there is more than `.java` file, the main file is the file which contains the following text:
 
 ```java
 public static void main(
@@ -68,6 +68,10 @@ java -jar <name>.jar
 ```
 
 If the simulation launches as expected, then you have successfully built it!
+
+# Hosting on GitHub Pages
+
+Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. 
 
 # OLD
 
