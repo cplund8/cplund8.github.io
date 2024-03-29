@@ -150,6 +150,8 @@ This loads CheerpJ from their servers so you don't have to install it locally on
 5. `display.style.width = window.innerWidth + "px"; display.style.height = window.innerHeight + "px";` sets the size of the CheerpJ display to be the size of the window.
 6. `await cheerpjRunJar("/app/sims/<sim name>.jar");` loads the `.jar` simulation file. Replace `<sim name>` with the name of the simulation.
 
+Go back to GitHub Desktop. 
+
 ---
 
 # OLD
