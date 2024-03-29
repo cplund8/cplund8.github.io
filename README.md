@@ -11,9 +11,9 @@ This tutorial is written for a computer running macOS. To compile and build thes
 
 # Compiling the source code
 
-All the simulations require a package called `lab` that provides a framework for creating buttons, beakers, flasks, etc. We only have to compile it once, because it is the same for all the simulations. To start, download `LabPlatform-Master.zip` and decompress it. Inside of it, there's a folder named `src`. Inside of `src`, there is a folder called `lab`. Right click on this folder, then click `Copy`.
+All the simulations require a package called `lab` that provides a framework for creating buttons, beakers, flasks, etc. We only have to compile it once, because it is the same for all the simulations. To start, download `LabPlatform-master.zip` and decompress it. Inside of it, there's a folder named `src`. Inside of `src`, there is a folder called `lab`. Right click on this folder, then click `Copy`.
 
-Next, download `FinishedSimulations-master.zip`. Decompress it and open it. Right click on `src`, then click `Paste Item`. Make sure the folder gets pasted *inside* of `src`. If it doesn't, you can click and drag it inside of `src`. Right click on `src` again, then click `New Terminal at Folder`, near the bottom of the options list. This will open a Terminal window. In it, run the following command:
+Next, download `FinishedSimulations-master.zip`. Decompress it and open it. Right click on `src` (inside of `FinishedSimulations-master`, not `LabPlatform-Master`; we are finished with `LabPlatform-master`), then click `Paste Item`. Make sure the folder gets pasted *inside* of `src`. If it doesn't, you can click and drag it inside of `src`. Right click on `src` again, then click `New Terminal at Folder`, near the bottom of the options list. This will open a Terminal window. In it, run the following command:
 
 ```zsh
 javac -target 1.8 -source 1.8 **/*.java
