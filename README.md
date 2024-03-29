@@ -73,7 +73,7 @@ If the simulation launches as expected, then you have successfully built it!
 
 Go to GitHub and [create a new public repository](https://github.com/new) named `<username>.github.io`, where `<username>` is your exact, case-sensitive GitHub username. Once you've created the repository, click the `Set up in Desktop` button, which should launch GitHub Desktop.
 
-Once GitHub Desktop launches, click the `Show in Finder` button, which will open the folder that houses your repository. Copy and paste all of the `.jar` files that you built in the previous step into this folder. You don't need any of the other files, only the `.jar` archives.
+Once GitHub Desktop launches, click the `Clone` button, then click the `Show in Finder` button, which will open the folder that houses your repository. Copy and paste all of the `.jar` files that you built in the previous step into this folder. You don't need any of the other files, only the `.jar` archives.
 
 Open a new Terminal window (you can do this by clicking the magnifying glass icon in the top bar, typing in `Terminal`, and pressing enter) and run the following commands:
 
