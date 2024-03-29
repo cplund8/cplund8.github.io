@@ -3,7 +3,7 @@
 This tutorial is written for a computer running macOS. To compile and build these labs, you will need the following:
 
 1. The [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) (JDK)
-    1. You can test if you have Java installed by running `java --version` in Terminal. If you have it installed, it will tell you the version; if not, it will say something along the lines of "Unknown command"
+    1. You can test if you have Java installed by running `java -version` in Terminal. If you have it installed, it will tell you the version; if not, it will say something along the lines of "Unknown command"
 2. A [GitHub](https://github.com/) account
 3. [GitHub Desktop](https://desktop.github.com/)
 
@@ -75,7 +75,7 @@ Go to GitHub and [create a new public repository](https://github.com/new) named 
 
 Once GitHub Desktop launches, click the `Show in Finder` button, which will open the folder that houses your repository. Copy and paste all of the `.jar` files that you built in the previous step into this folder. You don't need any of the other files, only the `.jar` archives.
 
-Open a new Terminal window and run the following commands:
+Open a new Terminal window (you can do this by clicking the magnifying glass icon in the top bar, typing in `Terminal`, and pressing enter) and run the following commands:
 
 ```zsh
 cd ~/Documents/GitHub/<username>.github.io
@@ -117,7 +117,7 @@ Go back to the Finder window we opened earlier. Open the `sims` folder, and in e
                     display.style.width = `${window.innerWidth}px`;
                     display.style.height = `${window.innerHeight}px`;
                 }
-                await cheerpjRunJar("/app/sims/<sim name>.jar");
+                await cheerpjRunJar("/app/<sim name>.jar");
             })();
         </script>
   </body>
