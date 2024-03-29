@@ -1,6 +1,6 @@
 # Prerequisites
 
-To compile and build these labs, you will need the following:
+This tutorial is written for a computer running macOS. To compile and build these labs, you will need the following:
 
 1. The [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) (JDK)
     1. You can test if you have Java installed by running `java --version` in Terminal. If you have it installed, it will tell you the version; if not, it will say something along the lines of "Unknown command"
@@ -84,7 +84,9 @@ mkdir sims
 cd sims
 ```
 
-By default, Terminal windows execute commands at the root of your computer, `~/`. The first command changes that to the folder that GitHub Desktop created to house the repository (`cd` is short for `change directory`). We create a file called `index.html`, then a folder called `sims` (`mkdir` is short for `make directory`), then navigate into that folder. Next, for each simulation you built, run the following command:
+By default, Terminal windows execute commands at the root of your computer, `~/`. The first command changes that to the folder that GitHub Desktop created to house the repository (`cd` is short for `change directory`). We create a file called `index.html`, then a folder called `sims` (`mkdir` is short for `make directory`), then navigate into that folder. 
+
+Next, for each simulation you built, run the following command:
 
 ```zsh
 touch <sim name>.html
@@ -150,26 +152,6 @@ This loads CheerpJ from their servers so you don't have to install it locally on
 5. `display.style.width = window.innerWidth + "px"; display.style.height = window.innerHeight + "px";` sets the size of the CheerpJ display to be the size of the window.
 6. `await cheerpjRunJar("/app/sims/<sim name>.jar");` loads the `.jar` simulation file. Replace `<sim name>` with the name of the simulation.
 
-Go back to GitHub Desktop. 
+Go back to GitHub Desktop. In the `Summary (required)` field in the left sidebar, write whatever you want. Things like "Initial commit" are common. Then, in the top bar, click the `Push origin` button. If you don't get an error, your simulations should now be live! GitHub Pages takes a couple of minutes to update, but the links to view the simulations are:
 
----
-
-# OLD
-
-
-Right click on the folder, then select `New Terminal at Folder`, near the bottom of the options list. This will open a Terminal window. In it, run the following two commands:
-
-```zsh
-find . -name "*.java" > sources.txt
-javac -target 1.8 -source 1.8 @sources.txt
-```
-
-**Note**: in Terminal, you have to run each command one at a time. You can't paste both commands into Terminal in at the same time.
-
-The first command creates a file called `sources.txt`, which is a list of all the `.java` files in `lab`. The second command compiles the all the files listed by `sources.txt`, using Java 8 (which is notated as version 1.8, for whatever reason). 
-
-`lab` is now compiled using Java 8, and is ready to used by the simulations!
-
-# Compiling the simulation
-
-These steps are the same for compiling any of the simulations. First, download `FinishedSimulations-master.zip`, decompress it, then open it. Drag the entire `lab` folder that we compiled in the previous step (not just the contents of the folder, but the folder itself) into the `src` folder that is inside `FinishedSimulations-master`. Next, right click on `src` and click `New Terminal at Folder`, opening a Terminal window.
+`<GitHub username>.github.io/sims/<sim name>`
