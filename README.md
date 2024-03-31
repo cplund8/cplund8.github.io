@@ -126,9 +126,11 @@ Go back to the Finder window we opened earlier. Open the `sims` folder, and in e
 </html>
 ```
 
-In the top menu, click `File`, then hold down the Option key, then click `Save As`. Make sure to replace the `.txt` extension for each file with `.html`.
+In the top menu, click `File`, then hold down the Option key, then click `Save As`. Make sure to replace the `.txt` extension for each file with `.html`. 
 
-This is mostly boilerplate HTML code, with a few differences:
+---
+
+Here's an explanation of what the above code is doing:
 
 ```js
 <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
@@ -155,6 +157,8 @@ This loads CheerpJ from their servers so you don't have to install it locally on
 4. `let display = document.getElementById("cheerpjDisplay");` creates a variable that lets us reference the CheerpJ display we created in Step 2.
 5. `display.style.width = window.innerWidth + "px"; display.style.height = window.innerHeight + "px";` sets the size of the CheerpJ display to be the size of the window.
 6. `await cheerpjRunJar("/app/sims/<sim name>.jar");` loads the `.jar` simulation file. Replace `<sim name>` with the name of the simulation.
+
+---
 
 Go back to GitHub Desktop. In the `Summary (required)` field in the left sidebar, write whatever you want. Things like "Initial commit" are common. Then, in the top bar, click the `Push origin` button. If you don't get an error, your simulations should now be live! GitHub Pages takes a couple of minutes to update, but the links to view the simulations are:
 
