@@ -89,10 +89,12 @@ By default, Terminal windows execute commands at the root of your computer, `~/`
 Next, for each simulation you built, run the following command:
 
 ```zsh
-touch <sim name>.html
+touch <sim name>.txt
 ```
 
-Go back to the Finder window we opened earlier. Open the `sims` folder, and in each `.html` file, paste the following code:
+> **Note**: we're only saving the files as `.txt` because the default macOS text editor, TextEdit, will use an unsupported type of text encoding if we don't. However, if you're using a proper code editor, you can save the files directly with a `.html` extension.
+
+Go back to the Finder window we opened earlier. Open the `sims` folder, and in each `.txt` file, paste the following code:
 
 ```html
 <!doctype html>
@@ -123,6 +125,8 @@ Go back to the Finder window we opened earlier. Open the `sims` folder, and in e
   </body>
 </html>
 ```
+
+In the top menu, click `File`, then hold down the Option key, then click `Save As`. Make sure to replace the `.txt` extension for each file with `.html`.
 
 This is mostly boilerplate HTML code, with a few differences:
 
