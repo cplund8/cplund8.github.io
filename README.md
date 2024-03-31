@@ -126,7 +126,7 @@ Go back to the Finder window we opened earlier. Open the `sims` folder, and in e
 </html>
 ```
 
-In the top menu, click `File`, then hold down the Option key, then click `Save As`. Make sure to replace the `.txt` extension for each file with `.html`. 
+Replace `<sim name>` with the name of the name of the simulation. Additionally, if you want, you can change the line `<title>Simulation</tile>` to include the specific name of the simulation, though this is unnecessary and everything works fine even if you don't. Once you've saved the file, right click on it in the folder, and click `Rename`. Replace the `.txt` extension with `.html`.
 
 ---
 
@@ -160,6 +160,6 @@ This loads CheerpJ from their servers so you don't have to install it locally on
 
 ---
 
-Go back to GitHub Desktop. In the `Summary (required)` field in the left sidebar, write whatever you want. Things like "Initial commit" are common. Then, in the top bar, click the `Push origin` button. If you don't get an error, your simulations should now be live! GitHub Pages takes a couple of minutes to update, but the links to view the simulations are:
+Go back to GitHub Desktop. In the `Summary (required)` field in the left sidebar, write whatever you want. Things like "Initial commit" are common. Click `Commit to main`, then, in the top bar, click the `Publish branch` button. If you don't get an error, your simulations should now be live! GitHub Pages takes a couple of minutes to update, but the links to view the simulations are:
 
-`<GitHub username>.github.io/sims/<sim name>`
+`<GitHub username>.github.io/sims/<sim name>.html`
