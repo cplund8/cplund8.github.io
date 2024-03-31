@@ -126,7 +126,7 @@ Go back to the Finder window we opened earlier. Open the `sims` folder, and in e
 </html>
 ```
 
-Replace `<sim name>` with the name of the name of the simulation. Additionally, if you want, you can change the line `<title>Simulation</tile>` to include the specific name of the simulation, though this is unnecessary and everything works fine even if you don't. Once you've saved the file, right click on it in the folder, and click `Rename`. Replace the `.txt` extension with `.html`.
+Replace `<sim name>` with the name of the name of the simulation. Additionally, if you want, you can change the line `<title>Simulation</tile>` to include the specific name of the simulation, though this is unnecessary and everything works fine even if you don't. Once you've saved the file, go back to the `sims` folder, then right click on the `.txt` file we just edited and click `Rename`. Replace the `.txt` extension with `.html`.
 
 ---
 
